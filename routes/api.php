@@ -20,6 +20,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/posts',[PostController::class,'index']);
-Route::get('/post',function (){
-    return response()->json(['data'=>'Hello World']);
-});
+Route::get('/posts/{id}',[PostController::class,'show']);
+
