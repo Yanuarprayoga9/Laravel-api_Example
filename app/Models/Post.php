@@ -11,4 +11,13 @@ class Post extends Model
     protected $fillable = [
         'title','news_content','author'
     ];
+    /**
+     * Get the user te Post
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function writer()
+    {
+        return $this->belongsTo(User::class, 'author', 'id');
+    }
 }
