@@ -39,6 +39,11 @@ class PostController extends Controller
         $post->update($request->all());
         return new PostDetailResource($post->loadMissing('writer:id,username'));
     }
+    public function delete($id){
+        $post = Post::find($id);
+        $post->delete();
+        return response()->json(['status'=> "Success",'Data'=>$post]);
+    }
 
     
 }
