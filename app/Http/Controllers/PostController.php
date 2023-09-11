@@ -44,6 +44,7 @@ class PostController extends Controller
         $post->delete();
         return response()->json(['status'=> "Success",'Data'=>$post]);
     }
+ 
 
     
 }
